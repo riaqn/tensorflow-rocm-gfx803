@@ -7,7 +7,7 @@
 pkgbase=tensorflow-rocm
 
 # Flags for building without/with cpu optimizations
-_build_no_opt=1
+_build_no_opt=0
 _build_opt=1
 
 pkgname=()
@@ -109,7 +109,7 @@ prepare() {
   export TF_NEED_NGRAPH=0
   export TF_NEED_IGNITE=0
   export TF_NEED_ROCM=1
-  export TF_ROCM_AMDGPU_TARGETS=gfx701,gfx702,gfx803,gfx900,gfx904,gfx906,gfx908
+  export TF_ROCM_AMDGPU_TARGETS=gfx803
   # See https://github.com/tensorflow/tensorflow/blob/master/third_party/systemlibs/syslibs_configure.bzl
   export TF_SYSTEM_LIBS="boringssl,curl,cython,gif,icu,libjpeg_turbo,lmdb,nasm,png,pybind11,zlib"
   export TF_SET_ANDROID_WORKSPACE=0
